@@ -1,0 +1,22 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  auth_service:
+    build:
+      context: ./auth_service
+    ports:
+      - "5000:5000"
+
+  dashboard_service:
+    build:
+      context: ./dashboard_service
+    ports:
+      - "5001:5001"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8000:80"
+
